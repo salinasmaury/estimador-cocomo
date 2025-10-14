@@ -13,17 +13,12 @@ const Layout = ({ children }) => {
         </p>
       </header>
 
-      {/* 2. flex-grow para ocupar todo el espacio vertical restante */}
       <div className="flex flex-row flex-grow">
-        {/* h-full asegura que el fondo del sidebar cubra toda la altura disponible */}
         <aside className="w-72 h-full bg-gradient-to-b from-gray-800 to-gray-900 border-r border-gray-600 shadow-xl flex flex-col justify-start items-center py-10 px-4 overflow-y-auto">
           <Sidebar />
         </aside>
 
-        {/* 3. Se ajusta el padding del main a p-8 */}
         <main className="flex-1 flex justify-center items-start overflow-y-auto p-8 bg-gray-50/5">
-          {/* 4. Se elimina max-w-6xl para que ocupe el 100% del ancho del main.
-             5. Se elimina my-4 para quitar los bordes blancos verticales. */}
           <div className="w-full bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-700/50 p-8">
             {children}
           </div>
