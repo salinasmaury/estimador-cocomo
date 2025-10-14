@@ -1,6 +1,6 @@
 # 📊 Estimador COCOMO I Intermedio
 
-Una aplicación web desarrollada en React para realizar estimaciones precisas de proyectos de software utilizando el modelo COCOMO I Intermedio de Barry Boehm. La aplicación incluye tanto los cálculos oficiales del modelo como extensiones prácticas para la gestión moderna de proyectos.
+App web en React para calcular estimaciones de proyectos de software usando el modelo COCOMO I Intermedio. Incluye los cálculos del modelo original más nuevas variables de resultados para gestión de proyectos.
 
 ## 🏗️ Arquitectura de la Aplicación
 
@@ -22,73 +22,64 @@ src/
 ### 🧠 **Componentes Clave del Sistema**
 
 #### **Lógica del Modelo: `src/utils/cocomoIntermedio.js`**
-- Implementación oficial del modelo COCOMO I Intermedio de Barry Boehm
-- Coeficientes del modelo para 3 tipos de proyecto (Orgánico, Semiacoplado, Empotrado)
-- 15 cost drivers agrupados en 4 categorías (Producto, Hardware, Personal, Proyecto)
-- Función principal de cálculo: `cocomoIntermedio(kloc, modo, multiplicadores)`
+- Código del modelo COCOMO I Intermedio
+- 3 tipos de proyecto: Orgánico, Semiacoplado, Empotrado
+- 15 factores de costo en 4 grupos
+- Función principal: `cocomoIntermedio(kloc, modo, multiplicadores)`
 
-#### **Interfaz de Usuario: `src/components/ProjectFormIntermedio.jsx`**
-- Formulario interactivo con validación en tiempo real
-- Inputs agrupados por categorías de cost drivers con tooltips explicativos
-- Cálculo automático de resultados oficiales COCOMO I + extensiones prácticas
-- Visualización responsiva optimizada para diferentes tamaños de pantalla
-
-#### **Navegación y Layout: `src/components/Layout.jsx`**
-- Navegación horizontal entre COCOMO Básico e Intermedio
-- Layout responsivo con Tailwind CSS
-- Componentes de ayuda contextual integrados
+#### **Interfaz: `src/components/ProjectFormIntermedio.jsx`**  
+- Formulario con validación en tiempo real
+- Inputs organizados por grupos con ayuda
+- Cálculo automático de resultados del modelo + nuevas variables
+- Diseño que se adapta a cualquier pantalla
 
 ## � **Documentación Detallada**
 
 Para información completa sobre el modelo COCOMO I y cómo interpretar los resultados:
 
-### 📖 **[Funcionamiento del Modelo COCOMO](./FUNCIONAMIENTO_COCOMO.md)**
-- Explicación completa de la teoría COCOMO I
-- Diferencias entre COCOMO Básico e Intermedio
-- Tipos de proyecto (Orgánico, Semiacoplado, Empotrado)
-- Implementación detallada del código
-- Los 15 factores de costo y sus valores
-- Ejemplos prácticos y consejos de uso
+### 📖 **[Cómo Funciona COCOMO](./FUNCIONAMIENTO_COCOMO.md)**
+- Qué es COCOMO I y cómo usarlo
+- Diferencias entre Básico e Intermedio
+- Los 3 tipos de proyecto
+- Código JavaScript explicado paso a paso
+- Los 15 factores y sus valores
 
-### 📊 **[Interpretación de Resultados](./INTERPRETACION_RESULTADOS.md)**
-- Significado detallado de cada métrica COCOMO I oficial
-- Diferenciación entre teoría original y extensiones prácticas
-- Ejemplos de cálculo paso a paso
-- Decisiones gerenciales basadas en los resultados
-- Análisis financiero y optimización de recursos
-- Casos de uso para diferentes audiencias (técnica vs gerencial)
+### 📊 **[Qué Significan los Resultados](./INTERPRETACION_RESULTADOS.md)**
+- Qué significa cada número que te da la calculadora
+- Cuáles son del modelo original y cuáles son nuevas variables
+- Ejemplos con números reales
+- Cómo tomar decisiones con los resultados
+- Cálculos de costos y optimización de equipos
 
 ## 🎯 **Resultados que Proporciona la Calculadora**
 
-### 📐 **Métricas Oficiales COCOMO I**
-1. **Esfuerzo (PM)** - Persona-meses de trabajo total requerido
-2. **Duración (TDEV)** - Meses cronológicos óptimos del proyecto  
-3. **Tamaño del Equipo (SS)** - Número promedio de desarrolladores
-4. **Factor de Ajuste (EAF)** - Multiplicador de complejidad del proyecto
+### 📐 **Resultados del Modelo Original**
+1. **Esfuerzo** - Cuántos meses-persona necesitas
+2. **Duración** - Cuántos meses va a durar el proyecto  
+3. **Tamaño del Equipo** - Cuántas personas trabajando
+4. **Factor de Ajuste** - Qué tan complejo es tu proyecto
 
-### 💼 **Extensiones Prácticas Agregadas**
-1. **Análisis de Costos** - Presupuestos y flujo de caja
-2. **Administración de Recursos** - Optimización con equipos limitados
-3. **Métricas de Productividad** - Benchmarking y comparaciones
+### 💼 **Nuevas Variables de Resultados**
+1. **Costos Totales** - Cuánto dinero vas a necesitar
+2. **Costos Mensuales** - Cuánto pagas cada mes
+3. **Optimización de Equipos** - Qué pasa si tienes menos gente
+4. **Productividad** - Qué tan eficiente es tu equipo
 
 ## ⭐ **Características Principales**
 
-### 🎯 **Funcionalidades**
-- ✅ **Modelo COCOMO I Básico** - Estimación rápida con parámetros mínimos
-- ✅ **Modelo COCOMO I Intermedio** - Estimación precisa con 15 factores de costo
-- ✅ **Cálculos Financieros** - Presupuestos, costos mensuales y análisis de viabilidad
-- ✅ **Optimización de Recursos** - Planificación con equipos de diferentes tamaños
-- ✅ **Interfaz Responsiva** - Optimizada para desktop, tablet y móvil
-- ✅ **Tooltips Explicativos** - Ayuda contextual para cada parámetro
-- ✅ **Validación en Tiempo Real** - Feedback inmediato sobre inputs
-- ✅ **Resultados Detallados** - Separación clara entre teoría oficial y extensiones
+### 🎯 **Qué Puedes Hacer**
+- ✅ **COCOMO Básico** - Cálculo rápido con pocos datos
+- ✅ **COCOMO Intermedio** - Cálculo detallado con 15 factores
+- ✅ **Costos en Dinero** - Cuánto va a costar tu proyecto
+- ✅ **Equipos Diferentes** - Qué pasa si tienes más o menos gente
+- ✅ **Ayuda Incluida** - Cada campo tiene explicación
+- ✅ **Validación Automática** - Te avisa si algo está mal
 
-### 💼 **Casos de Uso**
-- **Gerentes de Proyecto:** Planificación temporal, presupuestaria y de recursos
-- **Arquitectos de Software:** Evaluación de complejidad y factibilidad técnica
-- **Consultores IT:** Elaboración de propuestas comerciales fundamentadas
-- **Estudiantes/Académicos:** Aprendizaje del modelo COCOMO I con ejemplos prácticos
-- **Equipos de Desarrollo:** Autoevaluación y mejora continua de estimaciones
+### 💼 **Para Quién es Útil**
+- **Jefes de Proyecto:** Para planificar tiempo y presupuesto
+- **Desarrolladores:** Para saber qué tan grande es un proyecto
+- **Consultores:** Para hacer propuestas de trabajo
+- **Estudiantes:** Para aprender cómo se estiman proyectos
 
 ## 🚀 **Tecnologías Utilizadas**
 
@@ -131,10 +122,10 @@ npm run lint     # Linter ESLint
 
 ## 🎯 **Resumen**
 
-**Estimador COCOMO I Intermedio** es una herramienta moderna que combina:
-- 📐 **Fidelidad académica** al modelo original de Barry Boehm
-- 💼 **Valor gerencial** con extensiones prácticas para gestión de proyectos
-- 🎨 **Experiencia de usuario** intuitiva y responsiva
-- 📚 **Documentación completa** para diferentes niveles de expertise
+**Estimador COCOMO I Intermedio** te ayuda a:
+- 📐 **Usar el modelo COCOMO** tal como fue diseñado originalmente
+- 💼 **Calcular costos** y planificar equipos de trabajo
+- 🎨 **Trabajar fácil** con una interfaz simple
+- 📚 **Entender todo** con documentación clara
 
-Ideal para profesionales que necesitan estimaciones fundamentadas y gestores que requieren análisis financiero detallado.
+Perfecto si necesitas estimar proyectos de software de forma seria y con números reales.
