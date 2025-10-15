@@ -1,16 +1,21 @@
-import { useState } from 'react'
 
-import './App.css'
-import ProjectForm from './components/ProjectForm'
+import './App.css';
+import ProjectForm from './components/ProjectForm';
+import ProjectFormIntermedio from './components/ProjectFormIntermedio.jsx';
+import Layout from './components/Layout';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <ProjectForm/>
-    </>
-  )
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Navigate to="/basico" replace />} />
+        <Route path="/basico" element={<ProjectForm />} />
+        <Route path="/intermedio" element={<ProjectFormIntermedio />} />
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App
