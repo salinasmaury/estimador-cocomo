@@ -76,7 +76,6 @@ export default function ProjectFormIntermedio() {
       
       // Cálculos de administración de recursos
       const personasPromedio = res.esfuerzo / res.duracion;
-      const personasMaximas = personasEquipoNum > 0 ? personasEquipoNum : personasPromedio * 1.5;
       const duracionMinima = personasEquipoNum > 0 ? res.esfuerzo / personasEquipoNum : res.duracion;
       
       // Agregamos los nuevos cálculos al resultado
@@ -89,7 +88,6 @@ export default function ProjectFormIntermedio() {
         },
         recursos: {
           personasPromedio: personasPromedio,
-          personasMaximas: personasMaximas,
           duracionMinima: duracionMinima,
           equipoDefinido: personasEquipoNum
         }
@@ -251,7 +249,7 @@ export default function ProjectFormIntermedio() {
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[250px]">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-xs font-medium text-gray-700 block truncate">
+                      <label className="text-xs font-medium text-gray-700 block leading-tight">
                         {COST_DRIVER_LABELS[idx]}
                       </label>
                       <Tooltip texto={TOOLTIP_TEXTS[driver]}>
@@ -287,7 +285,7 @@ export default function ProjectFormIntermedio() {
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[220px]">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-xs font-medium text-gray-700 block truncate">
+                      <label className="text-xs font-medium text-gray-700 block leading-tight">
                         {COST_DRIVER_LABELS[idx]}
                       </label>
                       <Tooltip texto={TOOLTIP_TEXTS[driver]}>
@@ -323,7 +321,7 @@ export default function ProjectFormIntermedio() {
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[220px]">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-xs font-medium text-gray-700 block truncate">
+                      <label className="text-xs font-medium text-gray-700 block leading-tight">
                         {COST_DRIVER_LABELS[idx]}
                       </label>
                       <Tooltip texto={TOOLTIP_TEXTS[driver]}>
@@ -359,7 +357,7 @@ export default function ProjectFormIntermedio() {
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[220px]">
                     <div className="flex items-center justify-between mb-2">
-                      <label className="text-xs font-medium text-gray-700 block truncate">
+                      <label className="text-xs font-medium text-gray-700 block leading-tight">
                         {COST_DRIVER_LABELS[idx]}
                       </label>
                       <Tooltip texto={TOOLTIP_TEXTS[driver]}>
@@ -544,7 +542,7 @@ export default function ProjectFormIntermedio() {
                     </p>
                     {result.recursos.equipoDefinido > 0 && (
                       <p>
-                        <strong>Costo Mensual Real:</strong> Lo que pagas actualmente con tu equipo de {result.recursos.equipoDefinido} personas (duración: {result.recursos.duracionMinima.toFixed(1)} meses)
+                        <strong>Costo Mensual Real:</strong> Lo que se paga con  {result.recursos.equipoDefinido} personas (duración: {result.recursos.duracionMinima.toFixed(1)} meses)
                       </p>
                     )}
                   </div>
@@ -574,7 +572,7 @@ export default function ProjectFormIntermedio() {
               </div>
 
               {/* Duración con equipo disponible */}
-              {result.recursos.equipoDefinido > 0 ? (
+              {result.recursos.equipoDefinido > 0 && (
                 <div className="bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl p-6 border border-indigo-200 text-center">
                   <p className="text-sm font-medium text-indigo-700 mb-2">
                     Duración con {result.recursos.equipoDefinido} personas
@@ -583,16 +581,6 @@ export default function ProjectFormIntermedio() {
                     {result.recursos.duracionMinima.toFixed(1)}
                   </p>
                   <p className="text-sm text-indigo-600">meses</p>
-                </div>
-              ) : (
-                <div className="bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl p-6 border border-indigo-200 text-center">
-                  <p className="text-sm font-medium text-indigo-700 mb-2">
-                    Equipo Máximo Sugerido
-                  </p>
-                  <p className="text-2xl font-bold text-indigo-800">
-                    {result.recursos.personasMaximas.toFixed(0)}
-                  </p>
-                  <p className="text-sm text-indigo-600">personas</p>
                 </div>
               )}
 
