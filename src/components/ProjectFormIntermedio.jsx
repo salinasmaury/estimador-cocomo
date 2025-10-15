@@ -18,13 +18,13 @@ const TOOLTIP_TEXTS = {
   VIRT: "Estabilidad del hardware o entorno de ejecución del sistema.",
   TURN: "Disponibilidad del equipo para pruebas o ejecución.",
   ACAP: "Habilidad técnica y de análisis del personal que diseña el sistema.",
-  PCAP: "Competencia técnica del equipo de desarrollo en codificación.",
   AEXP: "Familiaridad del equipo con el dominio o área del software.",
-  LEXP: "Conocimiento en los lenguajes y herramientas utilizadas.",
+  PCAP: "Competencia técnica del equipo de desarrollo en codificación.",
+  PEXP: "Experiencia del equipo con la plataforma o entorno de desarrollo.",
+  LTEX: "Conocimiento en los lenguajes y herramientas utilizadas.",
   MODP: "Nivel de aplicación de metodologías de desarrollo estructuradas o modernas.",
   TOOL: "Grado de soporte de herramientas CASE o automatizadas.",
   SCED: "Presión de calendario o reducción del tiempo de desarrollo.",
-  TEAM: "Eficiencia de la comunicación y cohesión dentro del equipo.",
 };
 
 const MODOS = [
@@ -316,7 +316,7 @@ export default function ProjectFormIntermedio() {
               Drivers de Personal
             </h4>
             <div className="flex flex-wrap gap-4 text-black">
-              {["ACAP", "PCAP", "AEXP", "LEXP"].map((driver) => {
+              {["ACAP", "AEXP", "PCAP", "PEXP", "LTEX"].map((driver) => {
                 const idx = COST_DRIVERS.indexOf(driver);
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[220px]">
@@ -352,7 +352,7 @@ export default function ProjectFormIntermedio() {
               Drivers del Proyecto
             </h4>
             <div className="flex flex-wrap gap-4 text-black">
-              {["MODP", "TOOL", "SCED", "TEAM"].map((driver) => {
+              {["MODP", "TOOL", "SCED"].map((driver) => {
                 const idx = COST_DRIVERS.indexOf(driver);
                 return (
                   <div key={driver} className="bg-white rounded-lg p-3 border border-gray-200 hover:shadow-md transition-shadow flex-1 min-w-[220px]">
@@ -578,7 +578,7 @@ export default function ProjectFormIntermedio() {
                     Duración con {result.recursos.equipoDefinido} personas
                   </p>
                   <p className="text-2xl font-bold text-indigo-800">
-                    {result.recursos.duracionMinima.toFixed(1)}
+                    {result.recursos.duracionMinima.toFixed(2)}
                   </p>
                   <p className="text-sm text-indigo-600">meses</p>
                 </div>
